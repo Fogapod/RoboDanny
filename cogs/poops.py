@@ -147,16 +147,16 @@ class Poops(commands.Cog):
         # So X / 13 will clamp to our percentage,
         # We poopt out with 0xfffdf7 for the beginning colour
         # Gradually evolving into 0xffc20c
-        # rgb values are (255, 253, 247) -> (255, 194, 12)
+        # rgb values are (102, 77, 0) -> (102, 51, 0)
         # To create the gradient, we use a linear interpolation formula
         # Which for reference is X = X_1 * p + X_2 * (1 - p)
         p = poops / 13
         if p > 1.0:
             p = 1.0
 
-        red = 255
-        green = int((194 * p) + (253 * (1 - p)))
-        blue = int((12 * p) + (247 * (1 - p)))
+        red = 102
+        green = int((51 * p) + (77 * (1 - p)))
+        blue = 0
         return (red << 16) + (green << 8) + blue
 
     def get_emoji_message(self, message, poops):
